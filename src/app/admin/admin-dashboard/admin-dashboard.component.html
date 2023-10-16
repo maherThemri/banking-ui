@@ -1,0 +1,29 @@
+<div class="card p-2">
+    <h2>My account at a glance</h2>
+    <div class="d-flex flex-row justify-content-between card me-5 ms-5 mb-3 p-3">
+        <app-light-info *ngFor="let info of accountInfoList" [infoInput]="info" class="col-3"></app-light-info>
+    </div>
+    <div class="card m-3 p-3">
+        <div class="d-flex flex-row align-items-start mb-3">
+            <div class="me-2">
+                <label for="start-date" class="form-label">Start date</label>
+                <ngx-datepicker [options]="dateOptions" [(ngModel)]="startDate" class="form-control"></ngx-datepicker>
+            </div>
+            <div class="">
+                <label for="end-date" class="form-label">End date</label>
+                <ngx-datepicker [options]="dateOptions" [(ngModel)]="endDate" class="form-control"></ngx-datepicker>
+            </div>
+            <div class="d-flex flex-row justify-content-between mt-3 me-5 ms-5  p-3">
+                <button class="btn btn-primary" (click)="getData()">
+                    <em class="fas fa-search"></em>&nbsp;Search
+                </button>
+            </div>
+        </div>
+        <div class="card p-3">
+            <canvas baseChart [chartType]="chartType" [datasets]="datasets" [labels]="labels" [options]="chartOptions"
+                [title]="'My awsome chart'" [legend]="true">
+
+            </canvas>
+        </div>
+    </div>
+</div>

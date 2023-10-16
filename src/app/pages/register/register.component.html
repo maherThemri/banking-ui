@@ -1,0 +1,42 @@
+<div class="container-fluid card login-container">
+    <h3 class="text-center mt-2">Create an account</h3>
+    <hr>
+    <div class="alert alert-danger" role="alert" *ngIf="errorMessages?.length">
+        <p *ngFor="let msg of errorMessages">
+            {{msg}}
+        </p>
+    </div>
+    <div class="mb-3">
+        <label for="firstname" class="form-label">Firstname</label>
+        <input [(ngModel)]="userDto.firstname" type="text" class="form-control" id="firstname" name="firstname"
+            placeholder="Firstname">
+    </div>
+    <div class="mb-3">
+        <label for="lastname" class="form-label">Lastname</label>
+        <input [(ngModel)]="userDto.lastname" type="text" class="form-control" id="lastname" placeholder="Lastname">
+    </div>
+    <div class="mb-3">
+        <label for="login" class="form-label">Email address</label>
+        <input [(ngModel)]="userDto.email" type="email" class="form-control" id="login" placeholder="name@example.com">
+        <span style="color: red;">{{errorEmailMessage}}</span>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input [(ngModel)]="userDto.password" type="password" class="form-control" id="password" placeholder="Password">
+    </div>
+    <!--   <div class="mb-3">
+        <label for="repeat-password" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" id="repeat-password" placeholder="Confirm Password">
+    </div> -->
+    <div class="d-flex justify-content-between mb-3">
+        <button type="button" (click)="register()" class="btn btn-primary btn-sm">
+            <em class="fas fa-sign-in-alt">&nbsp;Register</em>
+        </button>
+        <div>
+            Already have an account?&nbsp;<button type="button" (click)="login()" class="btn btn-link">
+                Login
+            </button>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,31 @@
+<div class="p-2">
+    <h2>New contact</h2>
+    <div class="card p-2">
+        <div class="mb-3">
+            <label for="firstname" class="form-label">Firstname</label>
+            <input type="text" [(ngModel)]="contact.firstname" class="form-control" id="firstname"
+                placeholder="Firstname">
+        </div>
+        <div class="mb-3">
+            <label for="lastname" class="form-label">Lastname</label>
+            <input type="text" [(ngModel)]="contact.lastname" class="form-control" id="lastname" placeholder="Lastname">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" [(ngModel)]="contact.email" class="form-control" id="email" placeholder="user@user.com">
+        </div>
+        <div class="mb-3">
+            <label for="iban" class="form-label">IBAN</label>
+            <input type="text" [(ngModel)]="contact.iban" class="form-control" id="iban"
+                placeholder="AB12 1234 1234 1234">
+        </div>
+        <div class="d-flex justify-content-end">
+            <button type="button" (click)="cancel()" class="btn btn-link">
+                <em class="fas fa-times"></em>&nbsp;Cancel
+            </button>
+            <button type="button" (click)="saveContact()" class="btn btn-danger">
+                <em class="fas fa-save"></em>&nbsp;Save
+            </button>
+        </div>
+    </div>
+</div>
